@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFrameworks>net462;net6.0;net8.0;net10.0</TargetFrameworks><LangVersion>latest</LangVersion><PackageId>Errorly.Protocol</PackageId><Version>0.1.0-beta.1</Version><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings><AssemblyName>Errorly.Protocol</AssemblyName><PathMap>$(MSBuildProjectDirectory)=/_/sdk/Errorly.Protocol</PathMap><DebugType>portable</DebugType><Deterministic>true</Deterministic><ContinuousIntegrationBuild Condition="'$(ContinuousIntegrationBuild)' == '' and '$(CI)' == 'true'">true</ContinuousIntegrationBuild></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\Errorly.DotNet\IncidentPackage.cs" Link="IncidentPackage.cs" />
+    <Compile Include="..\Errorly.DotNet\IncidentPackageSerializer.cs" Link="IncidentPackageSerializer.cs" />
+    <Compile Include="..\Errorly.DotNet\StackFrameMetadata.cs" Link="StackFrameMetadata.cs" />
+    <InternalsVisibleTo Include="Errorly.DotNet" /><InternalsVisibleTo Include="Errorly.Sdk" /><InternalsVisibleTo Include="Errorly.Sdk.Tests" />
+    <InternalsVisibleTo Include="Errorly.IncidentPackageTests" />
+    <InternalsVisibleTo Include="Errorly.DotNet.Tests" />
+    <InternalsVisibleTo Include="Errorly.Api.Tests" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net462" Version="1.0.3" PrivateAssets="all" />
+    <PackageReference Include="System.Memory" Version="4.6.3" />
+    <PackageReference Include="System.Reflection.Metadata" Version="10.0.3" />
+  </ItemGroup>
+</Project>
+

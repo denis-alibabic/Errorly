@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../Shared/SampleSetup.cs" Link="SampleSetup.cs" />
+    <ProjectReference Include="../../../sdk/Errorly.Sdk/Errorly.Sdk.csproj" />
+    <ProjectReference Include="../../../tools/Errorly.SdkLab/Errorly.SdkLab.Contracts/Errorly.SdkLab.Contracts.csproj" />
+  </ItemGroup>
+</Project>

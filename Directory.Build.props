@@ -1,0 +1,13 @@
+<Project>
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
+    <ErrorlyMicrosoftDataSqliteVersion>10.0.12</ErrorlyMicrosoftDataSqliteVersion>
+    <!-- Shared by API, SDK, samples and test fixtures: generated trees are never source inputs. -->
+    <ErrorlyGeneratedInputExcludes>**/bin/**;**/obj/**;**/artifacts/**;**/TestResults/**;**/test-results/**;**/.test-results/**;**/fixture-output/**;**/fixture-outputs/**;**/publish/**;**/published/**</ErrorlyGeneratedInputExcludes>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(ErrorlyGeneratedInputExcludes)</DefaultItemExcludes>
+    <DefaultExcludesInProjectFolder>$(DefaultExcludesInProjectFolder);$(ErrorlyGeneratedInputExcludes)</DefaultExcludesInProjectFolder>
+  </PropertyGroup>
+</Project>

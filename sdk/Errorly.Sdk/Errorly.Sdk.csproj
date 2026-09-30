@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFrameworks>net462;net6.0;net10.0</TargetFrameworks><LangVersion>latest</LangVersion><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><PackageId>Errorly.Sdk</PackageId><Version>0.1.0-beta.1</Version><Description>Bounded, durable Errorly incident capture for .NET Framework and .NET.</Description></PropertyGroup>
+  <ItemGroup><ProjectReference Include="../Errorly.Protocol/Errorly.Protocol.csproj" /><PackageReference Include="System.Text.Json" Version="8.0.6" /><InternalsVisibleTo Include="Errorly.Sdk.Tests" /><InternalsVisibleTo Include="Errorly.Wpf" /><InternalsVisibleTo Include="Errorly.WinForms" /><InternalsVisibleTo Include="Errorly.AspNetCore" /><InternalsVisibleTo Include="Errorly.Extensions.Logging" /></ItemGroup>
+  <ItemGroup><AssemblyMetadata Include="PackageId" Value="$(PackageId)" /><AssemblyMetadata Include="PackageVersion" Value="$(PackageVersion)" /><AssemblyMetadata Include="TargetFramework" Value="$(TargetFramework)" /></ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net462'"><PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net462" Version="1.0.3" PrivateAssets="all" /><Reference Include="System.Net.Http" /></ItemGroup>
+  <PropertyGroup><PackageReadmeFile>README.md</PackageReadmeFile></PropertyGroup>
+  <ItemGroup><None Include="../Errorly.Sdk/README.md" Pack="true" PackagePath="README.md" /></ItemGroup>
+</Project>
+
+
